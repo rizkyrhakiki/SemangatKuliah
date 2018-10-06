@@ -28,6 +28,12 @@ input.form-control.search-bar {
 form.span.span-search{
     border: 1px solid black;
 }
+div.color-brand {
+    color: #FF4343;
+}
+a.color-brand {
+    color: #FF4343;
+}
 a.navbar-brand.color-brand{
     color: #FF4343;
 }
@@ -114,3 +120,6 @@ a.navbar-brand.color-brand{
     cursor: pointer;
 
 }
+.fs-16-bold{
+    font-size: 16pt;
+    font-weight: bold;
