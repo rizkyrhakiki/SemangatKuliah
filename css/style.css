@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Lobster";
+    src: url("/fonts/Lobster.otf");
+}
+
+body {
+    color: #4a4a4a;
+}
+
+input.form-control.search-bar {
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    width: 80%;
+    float: left;
+}
+.form-control-feedback {
+    float: right;
+    z-index: 2;
+    display: inline-block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+form.span.span-search{
+    border: 1px solid black;
+}
+a.navbar-brand.color-brand{
+    color: #FF4343;
+}
