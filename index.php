@@ -1,4 +1,4 @@
-<?php 
+<?php
 require 'header.php';
 require 'navbar.php';
 require_once("assets/conn.php"); 
@@ -7,12 +7,13 @@ $user = "faathir";
 <div>
     <div class="mt-5 center-content">
         <h1>Bersama Kita Atasi Masalah</h1>
-        <h3>bla bla bla </h3>
-        <button class="btn btn-nyeletuk mt-3 mb-5">Nyeletuk Sekarang!</button>
+        <h3>Ceritakan masalahmu dan tunggu para pelaku<br>bisnis mewujudkan impianmu </h3>
+        <a class="btn btn-nyeletuk mt-3 mb-5" href="homepage.php">Nyeletuk Sekarang!</a>
     </div>
+
     <div class="bg-white mt-5 center-content">
     <?php 
-    $query = mysqli_query($con,"SELECT * FROM posts");
+    $query = mysqli_query($con,"SELECT * FROM posts ORDER BY time DESC LIMIT 3");
     while($row = mysqli_fetch_array($query,MYSQLI_ASSOC)){
         $post_id = $row["post_id"];
         $jumlahvote = mysqli_num_rows(mysqli_query($con,"SELECT * FROM stats WHERE post_id = $post_id AND type='vote'"));
@@ -63,7 +64,7 @@ $user = "faathir";
                                     <div class="lbl" style="margin:auto">
                                         <?php 
                                         if($checkvote>0){
-                                            ?> <button name="setuju-btn" class="lbl-btn setuju-lbl" disabled><i class="align-middle far fa-thumbs-up button-post"></i> Setujui</button> <?php   
+                                            ?> <button name="setuju-btn" class="lbl-btn setuju-lbl" style="color:blue;" disabled><i class="align-middle fa fa-thumbs-up button-post" style="color:blue;"></i> Setujui</button> <?php   
                                         }else{
                                             ?>  
                                                 <form action="assets/vote_post.php" method="POST" class="form" style="display:inline;">
@@ -82,10 +83,25 @@ $user = "faathir";
                         </div>
                     </div>
                 </div>
-            </div>    
-        
+            </div> 
+            
         <?php
     }
     ?>
     </div>
+    <section style="background-color: lightgray; margin-top: 20px; padding: 30px;">
+        <div class="container text-center">
+            <h1 style="color: gray;"><strong>BERAWAL DARI MASALAH</strong></h1>
+            <p style="color:white; font-weight: bold;">Masalah menjadi hal yang selalu dihindari oleh sebagian orang, namun dibalik itu tanpa adanya masalah<br>
+            seluruh bisnis yang sudah ada sekarang tidak akan berjalan karena tidak adanya customer. Tanpa adanya<br>
+        masalah setiap orang akan dapat melakukan segalanya secara mandiri. Dapat disimpulkan bahwa masalah<br>
+    juga dapat memberikan peluang bisnis untuk orang-orang yang bisa menangkap momen dan mau mencari solusi<br>
+atas permasalahan itu. Karna akan ada orang yang rela mengeluarkan uangnya demi sebuah solusi.</p>
+        </div>
+    </section>
+    <footer style="background-color: #FF4343; padding: 10px; color:white;">
+        <div class="container">
+            <h5>&copy;2018 Nyeletuk.com</h5>
+        </div>
+    </footer>
 </div>
