@@ -10,7 +10,7 @@ $user = "faathir";
         <h3>Ceritakan masalahmu dan tunggu para pelaku<br>bisnis mewujudkan impianmu </h3>
         <a class="btn btn-nyeletuk mt-3 mb-5" href="homepage.php">buka TopiQ Sekarang!</a>
     </div>
-
+    
     <div class="bg-white mt-5 center-content">
     <?php 
     $query = mysqli_query($con,"SELECT * FROM posts ORDER BY time DESC LIMIT 3");
@@ -64,7 +64,7 @@ $user = "faathir";
                                     <div class="lbl" style="margin:auto">
                                         <?php 
                                         if($checkvote>0){
-                                            ?> <button name="setuju-btn" class="lbl-btn setuju-lbl" style="color:blue;" disabled><i class="align-middle fa fa-thumbs-up button-post" style="color:blue;"></i> Setujui</button> <?php   
+                                            ?> <button name="setuju-btn" class="lbl-btn setuju-lbl" style="color:#4366d8;" disabled><i class="align-middle fa fa-thumbs-up button-post" style="color:#4366d8;"></i> Setujui</button> <?php   
                                         }else{
                                             ?>  
                                                 <form action="assets/vote_post.php" method="POST" class="form" style="display:inline;">
@@ -89,14 +89,10 @@ $user = "faathir";
     }
     ?>
     </div>
-    <section style="background-color: lightgray; margin-top: 20px; padding: 30px;">
+    <section style="background-color: rgb(167, 167, 167); margin-top: 20px; padding: 30px;">
         <div class="container text-center">
             <h1 style="color: gray;"><strong>BERAWAL DARI MASALAH</strong></h1>
-            <p style="color:white; font-weight: bold;">Masalah menjadi hal yang selalu dihindari oleh sebagian orang, namun dibalik itu tanpa adanya masalah<br>
-            seluruh bisnis yang sudah ada sekarang tidak akan berjalan karena tidak adanya customer. Tanpa adanya<br>
-        masalah setiap orang akan dapat melakukan segalanya secara mandiri. Dapat disimpulkan bahwa masalah<br>
-    juga dapat memberikan peluang bisnis untuk orang-orang yang bisa menangkap momen dan mau mencari solusi<br>
-atas permasalahan itu. Karna akan ada orang yang rela mengeluarkan uangnya demi sebuah solusi.</p>
+            <p style="color:white; font-weight: bold;">Masalah menjadi hal yang selalu dihindari oleh sebagian orang, namun dibalik itu tanpa adanya masalah seluruh bisnis yang sudah ada sekarang tidak akan berjalan karena tidak adanya customer. Tanpa adanya masalah setiap orang akan dapat melakukan segalanya secara mandiri. Dapat disimpulkan bahwa masalah juga dapat memberikan peluang bisnis untuk orang-orang yang bisa menangkap momen dan mau mencari solusi atas permasalahan itu. Karna akan ada orang yang rela mengeluarkan uangnya demi sebuah solusi.</p>
         </div>
     </section>
     <footer style="background-color: #FF4343; padding: 10px; color:white;">

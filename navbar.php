@@ -32,6 +32,7 @@ session_start();?>
                                 </form>
 
                         </li>
+                        <?php if(!isset($_SESSION['nama'])) { ?>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="">
                               <strong>LOGIN</strong></a>
@@ -39,6 +40,13 @@ session_start();?>
                         <li class="nav-item">
                             <a class="nav-link" href="" data-toggle="modal" data-target="#registerModal"><strong>REGISTER</strong></a>
                         </li>
+                        <?php } 
+                        else { ?>
+                            <li class="nav-item">
+                                <strong><?php echo $_SESSION['nama']; ?></strong>
+                            </li>
+                        <?php
+                        } ?>
                     </ul>
                 </div>
             </div>
@@ -88,14 +96,18 @@ session_start();?>
 
                    $response = curl_exec($ch);
                    curl_close($ch);
-                   // var_dump($response);
+                //    echo var_dump($response);
                    // echo "<pre>$response</pre>";
                    $ambilData = json_decode($response, TRUE);
+
+                   $_SESSION['nama'] = $ambilData['data']['user']['first_name'];
 
                    if ($ambilData['message'] == 'success') {
                      echo "Sukses <br>";
                      echo " Selamat Datang ".$ambilData['data']['user']['first_name'];
                      $_SESSION["FirstName"]=$ambilData['data']['user']['first_name']; 
+                    // header('Location: homepage.php');
+
                    }else {
                      echo "Gagal";
                    }
@@ -132,7 +144,6 @@ session_start();?>
     </div>
 </div>
 <!-- end modal -->
-
 <!-- Modal Register -->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="loginModalCenter" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -151,7 +162,6 @@ session_start();?>
                      $lastname = $_POST['nama_belakang'];
                      $email = $_POST['email'];
                      $password = $_POST['password'];
-
                      curl_setopt($ch, CURLOPT_URL,
                                  "http://patrakomala.disbudpar.bandung.go.id:8080/api/v1/public/client/register?client_first_name=%22".$firstname."%22&client_last_name=".$lastname."&client_email=%22".$email."%22&client_password=%22".$password."%22&client_password_confirmation=%22".$password."%22&company_name=%22patrakomala%22");
                      curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);

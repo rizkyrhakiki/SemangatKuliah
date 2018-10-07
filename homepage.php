@@ -2,9 +2,10 @@
 require 'header.php';
 require 'navbar.php';
 require_once ("assets/conn.php");
-$user = "Faathir";
+$user = $_SESSION['nama'];
 ?>
 <div class="container">
+<p><?php echo $_SESSION['nama']; ?></p>
     <div class="row">
         <div class="col-lg-4">
             <form action="">

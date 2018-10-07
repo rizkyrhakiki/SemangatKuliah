@@ -7,7 +7,7 @@ require 'navbar.php';
         <div class="container ">
             <div class="row">
                 <div class="col text-center mt-5 color-brand fs-16-bold ">
-                    <div><a class="color-brand fs-16-bold" href="">Nyeletuk</a></div>
+                    <div><a class="color-brand fs-16-bold" href="">TopiQ</a></div>
                     <br>
                     <span class="section-heading">Daftar Akun Baru Sekarang!</span>
                 </div>
