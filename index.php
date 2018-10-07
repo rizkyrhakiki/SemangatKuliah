@@ -8,10 +8,10 @@ $user = "faathir";
     <div class="mt-5 center-content">
         <h1>Bersama Kita Atasi Masalah</h1>
         <h3>Ceritakan masalahmu dan tunggu para pelaku<br>bisnis mewujudkan impianmu </h3>
-        <a class="btn btn-nyeletuk mt-3 mb-5" href="homepage.php">buka TopiQ Sekarang!</a>
+        <a class="btn btn-nyeletuk mt-3 mb-5" style="padding-top:10px;" href="homepage.php"><h5>Ceritakan Sekarang!</h5></a>
     </div>
     
-    <div class="bg-white mt-5 center-content">
+    <div class="bg-white mt-5 center-content" style="padding-bottom:30px;">
     <?php 
     $query = mysqli_query($con,"SELECT * FROM posts ORDER BY time DESC LIMIT 3");
     while($row = mysqli_fetch_array($query,MYSQLI_ASSOC)){
@@ -25,7 +25,7 @@ $user = "faathir";
             
         
                 <!-- action="" method="_POST" -->
-            <div style="padding-top:1px;margin:auto;width:600px;">
+            <div style="padding-top:1px;margin:auto;margin-top:10px;width:600px;">
                 <?php 
                 if($row["status"] == 1){
                     ?>
@@ -83,26 +83,27 @@ $user = "faathir";
                         </div>
                     </div>
                 </div>
-            </div> 
             
+            </div> 
         <?php
-    }
-    ?>
+            }
+        ?>
+        <br>
+        <center><a href="#" style="font-size:18px;color:grey">Lihat lebih banyak masalah..</a></center>
+
     </div>
     
-    <script>
-        document.getElementById('');
-    </script>
-    
-    <section style="background-color: rgb(167, 167, 167); margin-top: 20px; padding: 30px;">
+
+
+    <section style="background-color: rgb(167, 167, 167); padding-top: 20px; padding: 50px;">
         <div class="container text-center">
             <h1 style="color: gray;"><strong>BERAWAL DARI MASALAH</strong></h1>
-            <p style="color:white; font-weight: bold;">Masalah menjadi hal yang selalu dihindari oleh sebagian orang, namun dibalik itu tanpa adanya masalah seluruh bisnis yang sudah ada sekarang tidak akan berjalan karena tidak adanya customer. Tanpa adanya masalah setiap orang akan dapat melakukan segalanya secara mandiri. Dapat disimpulkan bahwa masalah juga dapat memberikan peluang bisnis untuk orang-orang yang bisa menangkap momen dan mau mencari solusi atas permasalahan itu. Karna akan ada orang yang rela mengeluarkan uangnya demi sebuah solusi.</p>
+            <p style="color:white; font-size: 20px;font-weight: bold;">Masalah menjadi hal yang selalu dihindari oleh sebagian orang, namun dibalik itu tanpa adanya masalah seluruh bisnis yang sudah ada sekarang tidak akan berjalan karena tidak adanya customer. Tanpa adanya masalah setiap orang akan dapat melakukan segalanya secara mandiri. Dapat disimpulkan bahwa masalah juga dapat memberikan peluang bisnis untuk orang-orang yang bisa menangkap momen dan mau mencari solusi atas permasalahan itu. Karna akan ada orang yang rela mengeluarkan uangnya demi sebuah solusi.</p>
         </div>
     </section>
-    <footer style="background-color: #FF4343; padding: 10px; color:white;">
-        <div class="container">
-            <h5>&copy;2018 TopiQ.com</h5>
+    <footer style="background-color: #FF4343; padding: 20px; color:white;">
+        <div class="container"></div>
+            <h5>&copy;2018 topiq.com</h5>
         </div>
     </footer>
 </div>

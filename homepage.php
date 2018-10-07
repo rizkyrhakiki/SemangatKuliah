@@ -5,19 +5,16 @@ require_once ("assets/conn.php");
 $user = $_SESSION['nama'];
 ?>
 <div class="container">
-    <p>
-        <?php echo $_SESSION['nama']; ?>
-    </p>
     <div class="row">
         <div class="col-lg-4">
             <form action="">
                 <div class="cardpost">
                     <div class="row">
                         <div class="col-md-1">
-                            <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
+                            <img src="img/image.png" name="dp" width="50px" alt="">
                         </div>
                         <div class="namepost">
-                            <div class="ml-5" name="nama">
+                            <div class="ml-5" name="nama" style="margin-top:6px;">
                                 <?php echo $user; ?>
                             </div>
                         </div>
@@ -46,7 +43,7 @@ $user = $_SESSION['nama'];
             <div class="cardpost">
                 <div class="row">
                     <div class="col-md-1">
-                        <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
+                        <img src="img/image.png" name="dp" width="50px" alt="">
                     </div>
                     <div class="col-md-11">
                         <form action="assets/post_process.php" method="POST">
@@ -103,7 +100,7 @@ $user = $_SESSION['nama'];
                 <div class="cardpost bg-white">
                     <div class="row">
                         <div class="col-md-1">
-                            <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
+                            <img src="img/image.png" name="dp" width="50px" alt="">
                         </div>
                         <div class="col-md-11">
                             <div class="namepost">
@@ -182,7 +179,7 @@ $user = $_SESSION['nama'];
                 <div class="namepost">
                     <div class="row">
                     <div name="nama col-sm-10 " style="margin-left:15px;">
-                        <strong><img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt=""> <?php echo $row["user"];?></strong> <i class="pull-right"><?php echo substr($row["time"],0,10);?></i>
+                        <strong><img src="img/image.png" name="dp" width="50px" alt=""> <?php echo $row["user"];?></strong> <i class="pull-right"><?php echo substr($row["time"],0,10);?></i>
                     </div>
                     </div>
                 </div>
@@ -192,9 +189,7 @@ $user = $_SESSION['nama'];
                     </div>
                 </div>
                 <div class="font-biru">
-                    <br>
-                    Jl. Haji salim nomor 1 blok C3
-                    
+                    <a href="#">Jl. Haji salim nomor 1 blok C3</a>
                 </div>
                 <hr class="border-hr">
                 <div>

@@ -6,7 +6,7 @@ session_start();?>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand color-brand" href="index.php">
-               <strong>TopiQ</strong>
+               <strong style="font-size:25px;">TopiQ</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,10 @@ session_start();?>
                         <?php if(!isset($_SESSION['nama'])) { ?>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="">
-                              <strong>LOGIN</strong></a>
+                              <strong class="loginbtn">LOGIN</strong></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="" data-toggle="modal" data-target="#registerModal"><strong>REGISTER</strong></a>
+                            <a class="nav-link" href="" data-toggle="modal" data-target="#registerModal"><strong id="regbtn">REGISTER</strong></a>
                         </li>
                         <?php } 
                         else { ?>
@@ -97,7 +97,15 @@ session_start();?>
                      echo " Selamat Datang ".$ambilData['data']['user']['first_name'];
                      $_SESSION["FirstName"]=$ambilData['data']['user']['first_name']; 
                     // header('Location: homepage.php');
-
+                     
+                     echo '<script>';
+                     echo 'var data = \''.$_SESSION['nama'].'\';';
+                     echo '$(document).ready(function(){';
+                        echo '$(".loginbtn").html(data);';
+                        echo '});';
+                        echo 'document.getElementById(\'regbtn\').style.display="none";';
+                        echo '</script>';
+                     
                    }else {
                      echo "Gagal";
                    }
