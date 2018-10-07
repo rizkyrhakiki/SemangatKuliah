@@ -157,7 +157,7 @@ $user = $_SESSION['nama'];
                                     <button name="share-btn" class="lbl-btn setuju-lbl"><i class="align-middle far fa-share-square button-post"></i>
                                         Bagikan</button>
                                     <button name="setujui-btn" class="lbl-btn setuju-lbl" data-toggle="modal"
-                                        data-target="#modalDetail"><i class="align-middle fa fa-chart-line button-post"></i>
+                                        data-target="#modalDetail<?php echo $row["post_id"]; ?>"><i class="align-middle fa fa-chart-line button-post"></i>
                                         Detail</button>
                                 </div>
                             </center>
@@ -165,17 +165,8 @@ $user = $_SESSION['nama'];
                     </div>
                 </div>
             </div>
-
-            <?php
-    }
-    ?>
-        </div>
-
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            <!-- Modal -->
+<div class="modal fade" id="modalDetail<?php echo $row["post_id"]; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -190,22 +181,19 @@ $user = $_SESSION['nama'];
             <div class="modal-body">
                 <div class="namepost">
                     <div class="row">
-                    <div name="nama col-sm-10">
-                        Nama User adasdasdd
-                    </div>
-                    <div class="col-sm-4 ml-5 al-right">
-                        Tanggal
+                    <div name="nama col-sm-10 " style="margin-left:15px;">
+                        <strong><img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt=""> <?php echo $row["user"];?></strong> <i class="pull-right"><?php echo substr($row["time"],0,10);?></i>
                     </div>
                     </div>
                 </div>
                 <div class="statuspost">
                     <div name="status">
-                         Status
+                        <p> <?php echo $row["text"] ?></p>
                     </div>
                 </div>
                 <div class="font-biru">
                     <br>
-                    Jl.Raya bla bla bla
+                    Jl. Haji salim nomor 1 blok C3
                     
                 </div>
                 <hr class="border-hr">
@@ -213,14 +201,14 @@ $user = $_SESSION['nama'];
                     <strong>Orang yang mengalami masalah yang sama 0</strong> 
                 </div>
                 <div>
-                    <p>Rata-rata orang yang mengalami/hari : 7</p>
-                    <p>Orang yang mengalami diwaktu yang sama : 250</p>
-                    <p>Orang yang mengalami ditempat yang sama : 192</p>
+                    <p><br>Rata-rata orang yang mengalami/hari : 7
+                    <br>Orang yang mengalami diwaktu yang sama : 250
+                    <br>Orang yang mengalami ditempat yang sama : 192
                     <br>
-                    <p>Share link : 21</p>
-                    <p>Orang yang membuka dari Shared Link : 48</p>
+                    Share link : 21
+                    <br>Orang yang membuka dari Shared Link : 48
                     <br>
-                    <p>Pelaku bisnis yang tertaik melihat detail : 15</p>
+                    <br>Pelaku bisnis yang tertaik melihat detail : 15</p>
                     <hr>
                     <img src="img/data.png" alt="" width=100%>
 
@@ -232,6 +220,15 @@ $user = $_SESSION['nama'];
         </div>
     </div>
 </div>
+            <?php
+    }
+    ?>
+        </div>
+
+    </div>
+</div>
+
+
 
 <script>
     $('#exampleModal').on('show.bs.modal', function (event) {
