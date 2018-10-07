@@ -8,7 +8,11 @@ $user = "faathir";
     <div class="mt-5 center-content">
         <h1>Bersama Kita Atasi Masalah</h1>
         <h3>Ceritakan masalahmu dan tunggu para pelaku<br>bisnis mewujudkan impianmu </h3>
+        <?php if(isset($_SESSION['nama'])) { ?>
         <a class="btn btn-nyeletuk mt-3 mb-5" style="padding-top:10px;" href="homepage.php"><h5>Ceritakan Sekarang!</h5></a>
+        <?php } else { ?>
+        <a class="btn btn-nyeletuk mt-3 mb-5" style="padding-top:10px;" data-toggle="modal" data-target="#loginModal" href=""><h5>Ceritakan Sekarang!</h5></a>
+        <?php } ?>
     </div>
     
     <div class="bg-white mt-5 center-content" style="padding-bottom:30px;">
@@ -89,7 +93,11 @@ $user = "faathir";
             }
         ?>
         <br>
-        <center><a href="#" style="font-size:18px;color:grey">Lihat lebih banyak masalah..</a></center>
+        <?php if(isset($_SESSION['nama'])) { ?>
+            <center><a href="homepage.php" style="font-size:18px;color:">Lihat lebih banyak masalah..</a></center>
+        <?php } else { ?>
+            <center><a data-toggle="modal" data-target="#loginModal"href="" style="font-size:18px;color:grey">Lihat lebih banyak masalah..</a></center>
+        <?php } ?>
 
     </div>
     

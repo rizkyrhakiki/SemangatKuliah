@@ -128,15 +128,10 @@ session_start();?>
                         <input type="password" id="pass" name="pass" class="form-control"
                         placeholder="Password" required>
                     </div>
-                    <a class="color-brand" href="#"><small>Lupa Password?</small></a>
-
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-nyeletuk" name="login">Login</button>
+                        <button type="submit" style="width:100%" class="btn btn-nyeletuk" name="login">Login</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer bg-light">
-                <a class="color-brand" href="register.php"><small>Belum punya akun?</small></a>
             </div>
         </div>
     </div>
@@ -229,17 +224,10 @@ session_start();?>
                       placeholder="No. HP" value=""
                           required autofocus>
                   </div>
-
-
-                    <a class="color-brand" href="#"><small>Lupa Password?</small></a>
-
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-nyeletuk" name="register">Register</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer bg-light">
-                <a class="color-brand" href="login.php" ><small>Sudah punya akun?</small></a>
             </div>
         </div>
     </div>

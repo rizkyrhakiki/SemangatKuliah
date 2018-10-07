@@ -45,8 +45,13 @@ a.navbar-brand.color-brand{
 .btn-nyeletuk {
     background-color: #FF4343;
     color: #ffffff;
-    width: 20%;
 }
+
+.btn-nyeletuk:hover {
+    color: #ffffff;
+    background-color: #ff6464;
+}
+
 .container.fieldset-posting{
     border: 1px solid #FF4343;
     border-top-style: solid;
@@ -109,7 +114,7 @@ a.navbar-brand.color-brand{
 
 .button-post{
     color:grey;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .lbl .lbl-btn{

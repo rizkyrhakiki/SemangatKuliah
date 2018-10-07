@@ -2,7 +2,10 @@
 require 'header.php';
 require 'navbar.php';
 require_once ("assets/conn.php");
+if(isset($_SESSION['nama']))
 $user = $_SESSION['nama'];
+else
+echo("<script>location.href = 'index.php';</script>");
 ?>
 <div class="container">
     <div class="row">
@@ -25,18 +28,15 @@ $user = $_SESSION['nama'];
                         <p>28 Permasalahan telah dibagikan
                             <br>7 permasalahanmu telah teratasi
                             <br>72 permasalahan disetujui</p>
-
                         <h6><strong>History</strong></h6>
                         <p>Coba aja kalo ada laundry sepatu di...
                             <br>7Chilin di deket ITB oenu bgt antri..</p>
-
                         <h6><strong>Others</strong></h6>
                         <p><a href="#">Akun Bisnis</a>
                             <br><a href="#">Pengaturan Akun</a>
                             <br><a href="assets/process_logout.php">Logout</a> </p>
                     </div>
                 </div>
-
             </form>
         </div>
         <div class=" col-lg-7">
@@ -54,7 +54,6 @@ $user = $_SESSION['nama'];
                                         placeholder="Masalah apa yang anda alami, <?php echo $user; ?>?"></textarea>
                                 </div>
                             </div>
-
                             <hr>
                             <center>
                                 <div class="lbl" style="margin:auto">
@@ -70,9 +69,7 @@ $user = $_SESSION['nama'];
                         </form>
                     </div>
                 </div>
-
             </div>
-
             <?php 
     $query = mysqli_query($con,"SELECT * FROM posts ORDER BY time DESC");
     while($row = mysqli_fetch_array($query,MYSQLI_ASSOC)){
@@ -83,9 +80,6 @@ $user = $_SESSION['nama'];
         $jumlahdilihat = mysqli_num_rows(mysqli_query($con, "SELECT * FROM stats WHERE post_id = $post_id AND type='dilihat'"));
         $checkvote = mysqli_num_rows(mysqli_query($con, "SELECT * FROM stats WHERE type='vote' AND user = '$user' AND post_id = $post_id"));
         ?>
-
-
-            <!-- action="" method="_POST" -->
             <div style="padding-top:5px;margin:auto;width:635px;">
                 <?php 
                 if($row["status"] == 1){
@@ -168,13 +162,11 @@ $user = $_SESSION['nama'];
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-               
                 <h5 class="modal-title" id="exampleModalLongTitle"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            
             <div class="modal-body">
                 <div class="namepost">
                     <div class="row">
@@ -206,7 +198,6 @@ $user = $_SESSION['nama'];
                     <br>Pelaku bisnis yang tertaik melihat detail : 15</p>
                     <hr>
                     <img src="img/data.png" alt="" width=100%>
-
                 </div>
             </div>
             <div class="modal-footer">
@@ -219,12 +210,8 @@ $user = $_SESSION['nama'];
     }
     ?>
         </div>
-
     </div>
 </div>
-
-
-
 <script>
     $('#exampleModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
