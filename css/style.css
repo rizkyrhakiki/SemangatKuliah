@@ -120,6 +120,11 @@ a.navbar-brand.color-brand{
     cursor: pointer;
 
 }
+
+.lbl:visited {
+    background: red;
+}
+
 .fs-16-bold{
     font-size: 14pt;
     font-weight: bold;
@@ -138,13 +143,4 @@ a.navbar-brand.color-brand{
         border: 1px solid #ced4da;
         border-radius: 1rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.font-biru{
-    color: rgb(2, 194, 207);
-}
-.border-hr {
-    border: 1px solid rgba(0, 0, 0, 0.1)
-}
-.al-right {
-    text-align: right;
 }

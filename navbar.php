@@ -43,7 +43,8 @@ session_start();?>
                         <?php } 
                         else { ?>
                             <li class="nav-item">
-                                <strong><?php echo $_SESSION['nama']; ?></strong>
+                            <a class="nav-link" href="assets/process_logout.php">
+                                <strong><?php echo $_SESSION['nama']; ?></strong></a>
                             </li>
                         <?php
                         } ?>
@@ -70,16 +71,6 @@ session_start();?>
                 if (isset($_POST['login']) && !empty($_POST['email'])
                    && !empty($_POST['pass'])) {
 
-                   // if ($_POST['email'] == 'rizqi' &&
-                   //    $_POST['pass'] == 'rizqi') {
-                   //    $_SESSION['valid'] = true;
-                   //    $_SESSION['timeout'] = time();
-                   //    $_SESSION['email'] = 'rizqi';
-                   //
-                   //    echo 'Berhasil Login';
-                   // }else {
-                   //    echo 'Salah Email / Password';
-                   // }
                    $username = $_POST['email'];
                    $password = $_POST['pass'];
                    $ch = curl_init();
@@ -100,10 +91,9 @@ session_start();?>
                    // echo "<pre>$response</pre>";
                    $ambilData = json_decode($response, TRUE);
 
-                   $_SESSION['nama'] = $ambilData['data']['user']['first_name'];
+                   $_SESSION['nama'] = $ambilData['data']['user']['first_name'] .' '. $ambilData['data']['user']['last_name'];
 
                    if ($ambilData['message'] == 'success') {
-                     echo "Sukses <br>";
                      echo " Selamat Datang ".$ambilData['data']['user']['first_name'];
                      $_SESSION["FirstName"]=$ambilData['data']['user']['first_name']; 
                     // header('Location: homepage.php');
@@ -115,15 +105,15 @@ session_start();?>
 
               ?>
 
-                <div class="color-brand text-center mb-4 fs-16-bold">Nyeletuk</div>
+                <div class="color-brand text-center mb-4 fs-16-bold">Login TopiQ</div>
                 <form method="POST" id="input-login" action="" aria-label=""
                 action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);
                         ?>"
                 method="post"
                 >
                     <div class="form-group">
-                        <input type="text" id="email" name="email" class="form-control"
-                        placeholder="Email/Username" value=""
+                        <input type="email" id="email" name="email" class="form-control"
+                        placeholder="Email" value=""
                             required autofocus>
                     </div>
                     <div class="form-group">
@@ -163,7 +153,7 @@ session_start();?>
                      $email = $_POST['email'];
                      $password = $_POST['password'];
                      curl_setopt($ch, CURLOPT_URL,
-                                 "http://patrakomala.disbudpar.bandung.go.id:8080/api/v1/public/client/register?client_first_name=%22".$firstname."%22&client_last_name=".$lastname."&client_email=%22".$email."%22&client_password=%22".$password."%22&client_password_confirmation=%22".$password."%22&company_name=%22patrakomala%22");
+                                 "http://patrakomala.disbudpar.bandung.go.id:8080/api/v1/public/client/register?client_first_name=".$firstname."&client_last_name=".$lastname."&client_email=%22".$email."%22&client_password=%22".$password."%22&client_password_confirmation=%22".$password."%22&company_name=%22patrakomala%22");
                      curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
                      curl_setopt($ch, CURLOPT_HEADER, FALSE);
 
@@ -181,7 +171,7 @@ session_start();?>
                      $ambilData = json_decode($response, TRUE);
 
                      if ($ambilData['message'] == 'Created') {
-                       echo "Berhasil <br> Dibuat";
+                       echo "Berhasil Dibuat";
                      }else {
                        echo "Gagal";
                      }
@@ -190,7 +180,7 @@ session_start();?>
 
              ?>
             <div class="modal-body">
-                <div class="color-brand text-center mb-4 fs-16-bold">Nyeletuk</div>
+                <div class="color-brand text-center mb-4 fs-16-bold">Register TopiQ</div>
                 <form method="POST" id="input-register" action="" aria-label=""
                 action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);
                         ?>"
@@ -198,31 +188,31 @@ session_start();?>
 
                   <div class="form-group">
                       <input type="text" id="nama_depan" name="nama_depan" class="form-control"
-                      placeholder="Nama Depan" value=""
-                          required autofocus>
+                      placeholder="Nama Depan (tanpa spasi)" value=""
+                          required autofocus pattern="^\S+$">
                   </div>
 
                   <div class="form-group">
                       <input type="text" id="nama_belakang" name="nama_belakang" class="form-control"
-                      placeholder="Nama Belakang" value=""
-                          required autofocus>
+                      placeholder="Nama Belakang (tanpa spasi)" value=""
+                          required autofocus pattern="^\S+$">
                   </div>
 
                   <div class="form-group">
-                      <input type="text" id="email" name="email" class="form-control"
+                      <input type="email" id="email" name="email" class="form-control"
                       placeholder="Email" value=""
                           required autofocus>
                   </div>
 
                   <div class="form-group">
                       <input type="password" id="password" name="password" class="form-control"
-                      placeholder="Password" value=""
+                      placeholder="Password (Min.8 karakter)" pattern=".{0}|.{8,}" value=""
                           required autofocus>
                   </div>
 
                   <div class="form-group">
                       <input type="password" id="ulangPassword" name="ulangPassword" class="form-control"
-                      placeholder="Ketik Ulang Password" value=""
+                      placeholder="Ketik Ulang Password" pattern=".{0}|.{8,}" value=""
                           required autofocus>
                   </div>
 

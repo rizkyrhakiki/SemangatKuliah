@@ -39,7 +39,7 @@ $user = "faathir";
                 <div class="cardpost">
                     <div class="row">
                         <div class="col-md-1">
-                            <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
+                            <img src="img/image.png" name="dp" width="50px" alt="">
                         </div>
                         <div class="col-md-11">
                             <div class="namepost">
@@ -89,6 +89,11 @@ $user = "faathir";
     }
     ?>
     </div>
+    
+    <script>
+        document.getElementById('');
+    </script>
+    
     <section style="background-color: rgb(167, 167, 167); margin-top: 20px; padding: 30px;">
         <div class="container text-center">
             <h1 style="color: gray;"><strong>BERAWAL DARI MASALAH</strong></h1>
