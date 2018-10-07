@@ -1,11 +1,12 @@
-<?php require 'header.php' ?>
+<?php require 'header.php';
+session_start();?>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand color-brand" href="index.php">
-               <strong>NYELETUK</strong>
+               <strong>TopiQ</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -94,6 +95,7 @@
                    if ($ambilData['message'] == 'success') {
                      echo "Sukses <br>";
                      echo " Selamat Datang ".$ambilData['data']['user']['first_name'];
+                     $_SESSION["FirstName"]=$ambilData['data']['user']['first_name']; 
                    }else {
                      echo "Gagal";
                    }

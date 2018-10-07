@@ -8,7 +8,7 @@ $user = "faathir";
     <div class="mt-5 center-content">
         <h1>Bersama Kita Atasi Masalah</h1>
         <h3>Ceritakan masalahmu dan tunggu para pelaku<br>bisnis mewujudkan impianmu </h3>
-        <a class="btn btn-nyeletuk mt-3 mb-5" href="homepage.php">Nyeletuk Sekarang!</a>
+        <a class="btn btn-nyeletuk mt-3 mb-5" href="homepage.php">buka TopiQ Sekarang!</a>
     </div>
 
     <div class="bg-white mt-5 center-content">
@@ -39,7 +39,7 @@ $user = "faathir";
                 <div class="cardpost">
                     <div class="row">
                         <div class="col-md-1">
-                            <img src="img/dp.png" name="dp" width="50px" alt="">
+                            <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
                         </div>
                         <div class="col-md-11">
                             <div class="namepost">
@@ -101,7 +101,7 @@ atas permasalahan itu. Karna akan ada orang yang rela mengeluarkan uangnya demi 
     </section>
     <footer style="background-color: #FF4343; padding: 10px; color:white;">
         <div class="container">
-            <h5>&copy;2018 Nyeletuk.com</h5>
+            <h5>&copy;2018 TopiQ.com</h5>
         </div>
     </footer>
 </div>

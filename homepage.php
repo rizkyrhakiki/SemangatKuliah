@@ -11,7 +11,7 @@ $user = "Faathir";
                 <div class="cardpost">
                     <div class="row">
                         <div class="col-md-1">
-                                <img src="img/dp.png" name="dp" width="50px" alt="">
+                                <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
                         </div>
                         <div class="namepost">
                             <div class="ml-5" name="nama"><?php echo $user; ?></div>
@@ -31,7 +31,7 @@ $user = "Faathir";
                              <h6><strong>Others</strong></h6>
                             <p><a href="#">Akun Bisnis</a>
                             <br><a href="#">Pengaturan Akun</a>
-                            <br><a href="#">Logout</a> </p>
+                            <br><a href="assets/process_logout.php">Logout</a> </p>
                         </div>
                 </div>
                 
@@ -41,7 +41,7 @@ $user = "Faathir";
             <div class="cardpost">
                 <div class="row">
                     <div class="col-md-1">
-                        <img src="img/dp.png" name="dp" width="50px" alt="">
+                        <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
                     </div>
                     <div class="col-md-11">
                     <form action="assets/post_process.php" method="POST">
@@ -98,7 +98,7 @@ $user = "Faathir";
                 <div class="cardpost bg-white">
                     <div class="row">
                         <div class="col-md-1">
-                            <img src="img/dp.png" name="dp" width="50px" alt="">
+                            <img src="http://i.imgur.com/HQ3YU7n.gif" name="dp" width="50px" alt="">
                         </div>
                         <div class="col-md-11">
                             <div class="namepost">
@@ -148,4 +148,11 @@ $user = "Faathir";
     }
     ?>
         </div>
+        
     </div>
+</div>
+<footer style="background-color: #FF4343; padding: 10px; color:white; margin-top: 20px; ">
+        <div class="container">
+            <h5>&copy;2018 TopiQ.com</h5>
+        </div>
+    </footer>
